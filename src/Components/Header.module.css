@@ -1,0 +1,53 @@
+.headerBg {
+  background: url('../assets/desktop/bg-pattern-header.svg') no-repeat;
+  background-position: bottom right;
+  background-size: cover;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 3rem !important;
+  padding-bottom: 4rem !important;
+}
+
+.button {
+  border: none;
+  width: 3.25rem;
+  height: 1.5rem;
+  margin-right: 32px;
+  border-radius: 24px;
+  cursor: pointer;
+  position: relative;
+}
+
+.button::before,
+.button::after {
+  width: max-content;
+  height: max-content;
+  position: absolute;
+}
+
+.button::before {
+  content: url('../assets/desktop/icon-sun.svg');
+  left: -32px;
+  top: 3px;
+}
+
+.button::after {
+  content: url('../assets/desktop/icon-moon.svg');
+  right: -32px;
+  top: 6px;
+}
+
+.button span {
+  display: block;
+  width: 1rem;
+  height: 1rem;
+  background: #5964e0;
+  border-radius: 50%;
+  position: absolute;
+  top: calc(50% - 0.5rem);
+  left: 4px;
+}

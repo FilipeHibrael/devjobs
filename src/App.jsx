@@ -1,5 +1,12 @@
+import Header from './Components/Header';
+import './App.css'
+
 function App() {
-  return <>Devjobs</>;
+  return (
+    <>
+      <Header />
+    </>
+  );
 }
 
 export default App;
