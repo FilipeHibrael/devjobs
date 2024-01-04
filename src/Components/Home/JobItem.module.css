@@ -1,0 +1,58 @@
+.job {
+  display: grid;
+  gap: 1rem;
+  background: var(--white);
+  padding: 2rem;
+  padding-top: 3rem;
+  border-radius: 0.4rem;
+  position: relative;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 3rem;
+  height: 3rem;
+  padding: 0.2rem;
+  margin-left: 2rem;
+  border-radius: 0.8rem;
+  position: absolute;
+  top: -1.5rem;
+}
+
+.info {
+  color: var(--darkGrey);
+}
+
+.info span:first-child {
+  margin-right: 2rem;
+  position: relative;
+}
+
+.info span:first-child::before {
+  content: '';
+  width: 4px;
+  height: 4px;
+  background: var(--darkGrey);
+  border-radius: 50%;
+  top: calc(50% - 3px);
+  right: -1rem;
+  position: absolute;
+}
+
+.position {
+  font-size: 1.4rem;
+}
+
+.company {
+  display: block;
+  color: var(--darkGrey);
+  margin-bottom: 1rem;
+}
+
+.location {
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--violet);
+}
