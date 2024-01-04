@@ -3,6 +3,8 @@ import dataJson from '../../data.json';
 import JobItem from './JobItem';
 import styles from './Jobs.module.css';
 import useFetch from '../../Hooks/useFetch';
+import Error from '../Helper/Error';
+import Loading from '../Helper/Loading';
 
 const Jobs = () => {
   const { data, error, loading, request } = useFetch();
@@ -11,8 +13,8 @@ const Jobs = () => {
     request('../../src/data.json');
   }, [request]);
 
-  if (error) return <div>{error}</div>;
-  if (loading) return <div>Carregando...</div>;
+  if (error) return <Error error={error} />;
+  if (loading) return <Loading />;
   if (data)
     return (
       <div className={styles.jobs}>
