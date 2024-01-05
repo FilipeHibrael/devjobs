@@ -5,6 +5,7 @@ import styles from './Jobs.module.css';
 import useFetch from '../../Hooks/useFetch';
 import Error from '../Helper/Error';
 import Loading from '../Helper/Loading';
+import { Link } from 'react-router-dom';
 
 const Jobs = () => {
   const { data, error, loading, request } = useFetch();
@@ -19,7 +20,9 @@ const Jobs = () => {
     return (
       <div className={styles.jobs}>
         {dataJson.map((data) => (
-          <JobItem key={data.id} {...data} />
+          <Link key={data.id} to={`/job/${data.id}/${data.position}`}>
+            <JobItem {...data} />
+          </Link>
         ))}
       </div>
     );
