@@ -2,5 +2,17 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: 4rem 2rem;
-  padding: 4rem 0;
+  margin-top: 4rem;
+}
+
+.jobListContainer {
+  padding-bottom: 4rem;
+}
+
+.button {
+  display: block;
+  margin: 0 auto;
+  border: none;
+  cursor: pointer;
+  margin-top: 4rem;
 }

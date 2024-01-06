@@ -1,6 +1,7 @@
 import React from 'react';
 import Logo from '../assets/desktop/logo.svg?react';
 import styles from './Header.module.css';
+import { Link } from 'react-router-dom';
 
 const Header = ({ darkMode, setDarkMode }) => {
   function handleClick() {
@@ -11,7 +12,7 @@ const Header = ({ darkMode, setDarkMode }) => {
     <div className={styles.headerBg}>
       <header className={`${styles.header} container`}>
         <div>
-          <Logo />
+          <Link to='/'><Logo /></Link>
         </div>
         <div>
           <button

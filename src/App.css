@@ -78,6 +78,7 @@ img {
 .button,
 .lightButton {
   font-weight: 700;
+  font-size: 1rem;
   padding: 0.8rem 1.4rem;
   border-radius: 0.3rem;
   transition: background 0.2s;
