@@ -2,7 +2,7 @@
   display: grid;
   grid-template-columns: auto 1fr auto;
   align-items: center;
-  background: var(--white);
+  background: var(--filters-bg-color);
   border-radius: 0 0.4rem 0.4rem 0.4rem;
   overflow: hidden;
   transform: translateY(-32px);

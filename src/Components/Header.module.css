@@ -50,4 +50,9 @@
   position: absolute;
   top: calc(50% - 0.5rem);
   left: 4px;
+  transition: 0.3s left;
+}
+
+.button.active span {
+  left: 32px;
 }

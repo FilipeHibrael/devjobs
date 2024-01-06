@@ -1,7 +1,7 @@
 .job {
   display: grid;
   gap: 1rem;
-  background: var(--white);
+  background: var(--filters-bg-color);
   height: 100%;
   padding: 2rem;
   padding-top: 3rem;
