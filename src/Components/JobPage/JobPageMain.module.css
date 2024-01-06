@@ -1,0 +1,99 @@
+.jobPageMain {
+  background: var(--white);
+  padding: 2.5rem;
+  border-radius: 0.4rem;
+}
+
+.intro {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+}
+
+.info {
+  color: var(--darkGrey);
+  margin-bottom: 0.4rem;
+}
+
+.info span:first-child {
+  margin-right: 2rem;
+  position: relative;
+}
+
+.info span:first-child::before {
+  content: '';
+  width: 4px;
+  height: 4px;
+  background: var(--darkGrey);
+  border-radius: 50%;
+  top: calc(50% - 3px);
+  right: -1rem;
+  position: absolute;
+}
+
+.position {
+  font-size: 1.75rem;
+  margin-bottom: 0.5rem;
+}
+
+.location {
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--violet);
+}
+
+.description {
+  margin-bottom: 3rem;
+}
+
+.requirements {
+  margin-bottom: 3rem;
+}
+
+p {
+  color: var(--light-text-color);
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+}
+
+h2 {
+  margin-bottom: 1.5rem;
+}
+
+.descriptionList,
+.roleList {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  line-height: 1.8;
+  color: var(--light-text-color);
+}
+
+.descriptionList li {
+  position: relative;
+  margin-left: 2rem;
+}
+
+.descriptionList li::before {
+  content: '';
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--violet);
+  position: absolute;
+  top: 12px;
+  left: -2rem;
+}
+
+.roleList li {
+  position: relative;
+  margin-left: 2rem;
+}
+
+.roleList li span {
+  font-weight: 700;
+  color: var(--violet);
+  position: absolute;
+  left: -2rem;
+}

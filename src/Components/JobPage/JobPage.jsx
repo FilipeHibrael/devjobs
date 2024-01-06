@@ -5,6 +5,7 @@ import Loading from '../Helper/Loading';
 import Error from '../Helper/Error';
 import JobPageHeader from './JobPageHeader';
 import styles from './JobPage.module.css'
+import JobPageMain from './JobPageMain';
 
 const JobPage = () => {
   const { id } = useParams();
@@ -27,6 +28,7 @@ const JobPage = () => {
         {jobData ? (
           <section className={styles.jobPage}>
             <JobPageHeader {...jobData} />
+            <JobPageMain {...jobData} />
           </section>
         ) : (
           'Not Found'

@@ -52,13 +52,26 @@ img {
   margin: 0 auto;
 }
 
+.button,
+.lightButton {
+  font-weight: 700;
+  padding: 0.8rem 1.4rem;
+  border-radius: 0.3rem;
+  transition: background 0.2s;
+}
+
+.button {
+  background: var(--violet);
+  color: var(--white);
+}
+
+.button:hover {
+  background: var(--lightViolet);
+}
+
 .lightButton {
   background: var(--button-light-bg-color);
   color: var(--button-light-color);
-  font-weight: 700;
-  padding: 0.8rem 1.2rem;
-  border-radius: 0.2rem;
-  transition: background 0.2s;
 }
 
 .lightButton:hover {

@@ -2,6 +2,7 @@
   display: grid;
   gap: 1rem;
   background: var(--white);
+  height: 100%;
   padding: 2rem;
   padding-top: 3rem;
   border-radius: 0.4rem;
