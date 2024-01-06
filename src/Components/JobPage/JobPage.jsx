@@ -4,8 +4,8 @@ import useFetch from '../../Hooks/useFetch';
 import Loading from '../Helper/Loading';
 import Error from '../Helper/Error';
 import JobPageHeader from './JobPageHeader';
-import styles from './JobPage.module.css'
 import JobPageMain from './JobPageMain';
+import JobPageFooter from './JobPageFooter';
 
 const JobPage = () => {
   const { id } = useParams();
@@ -26,9 +26,10 @@ const JobPage = () => {
     return (
       <>
         {jobData ? (
-          <section className={styles.jobPage}>
+          <section>
             <JobPageHeader {...jobData} />
             <JobPageMain {...jobData} />
+            <JobPageFooter {...jobData} />
           </section>
         ) : (
           'Not Found'

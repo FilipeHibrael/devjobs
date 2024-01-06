@@ -52,6 +52,12 @@ img {
   margin: 0 auto;
 }
 
+.jobPageContainer {
+  max-width: 740px;
+  padding: 0 1rem;
+  margin: 0 auto;
+}
+
 .button,
 .lightButton {
   font-weight: 700;
