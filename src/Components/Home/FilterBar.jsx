@@ -1,4 +1,5 @@
 import React from 'react';
+import styles from './FilterBar.module.css';
 
 const FilterBar = ({ data, setJobsData }) => {
   const [text, setText] = React.useState('');
@@ -31,8 +32,8 @@ const FilterBar = ({ data, setJobsData }) => {
       filteredData = filteredData.filter((item) =>
         Object.entries(item).some(
           ([key, value]) =>
-            typeof value === 'string' &&
             selectedAttributes.includes(key) &&
+            typeof value === 'string' &&
             value.toLowerCase().includes(text.toLowerCase())
         )
       );
@@ -51,11 +52,12 @@ const FilterBar = ({ data, setJobsData }) => {
 
   return (
     <div>
-      <form onSubmit={handleFilter}>
+      <form className={styles.form} onSubmit={handleFilter}>
         <label style={{ display: 'none' }} htmlFor="text">
           Text
         </label>
         <input
+          className={styles.text}
           type="text"
           id="text"
           placeholder="Filter by title, companies, expertise..."
@@ -63,6 +65,7 @@ const FilterBar = ({ data, setJobsData }) => {
           onChange={({ target }) => setText(target.value)}
         />
         <select
+          className={styles.location}
           value={location}
           onChange={({ target }) => setLocation(target.value)}
         >
@@ -73,16 +76,19 @@ const FilterBar = ({ data, setJobsData }) => {
             </option>
           ))}
         </select>
-        <label>
-          <input
-            type="checkbox"
-            value="fullTime"
-            checked={fullTimeOnly}
-            onChange={({ target }) => setFullTimeOnly(target.checked)}
-          />
-          Full Time Only
-        </label>
-        <button>Search</button>
+        <div>
+          <label className={styles.fullTimeOnly}>
+            <input
+              type="checkbox"
+              value="fullTime"
+              checked={fullTimeOnly}
+              onChange={({ target }) => setFullTimeOnly(target.checked)}
+            />
+            <span className={styles.checkmark}></span>
+            Full Time Only
+          </label>
+          <button className="button">Search</button>
+        </div>
       </form>
     </div>
   );

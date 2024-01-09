@@ -14,7 +14,10 @@ const Jobs = ({ jobsData }) => {
     <div className={styles.jobListContainer}>
       <div className={styles.jobs}>
         {jobsData.slice(0, visibleItems).map((jobsData) => (
-          <Link key={jobsData.id} to={`/job/${jobsData.id}/${jobsData.position}`}>
+          <Link
+            key={jobsData.id}
+            to={`/job/${jobsData.id}/${jobsData.position}`}
+          >
             <JobItem {...jobsData} />
           </Link>
         ))}

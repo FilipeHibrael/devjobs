@@ -23,6 +23,13 @@
   --button-light-color: #5964e0;
 }
 
+#app {
+  font-family: 'Kumbh Sans', sans-serif;
+  color: var(--text-color);
+  background: var(--app-bg-color);
+  min-height: 100vh;
+}
+
 #app.darkMode {
   --text-color: #fff;
   --light-text-color: #9daec2;
@@ -34,12 +41,6 @@
   --button-light-bg-color: #303642;
   --button-light-bg-color-hvr: #525861;
   --button-light-color: #fff;
-}
-
-#app {
-  font-family: 'Kumbh Sans', sans-serif;
-  color: var(--text-color);
-  background: var(--app-bg-color);
 }
 
 * {
