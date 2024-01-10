@@ -1,11 +1,12 @@
 .form {
   display: grid;
-  grid-template-columns: 1.5fr 1fr auto;
+  grid-template-columns: 1fr minmax(400px, 1fr) auto;
   align-items: center;
   background: var(--filters-bg-color);
   border-radius: 0.4rem;
   transform: translateY(-2.5rem);
-  overflow: hidden;
+  position: relative;
+  z-index: 1;
 }
 
 .text,
@@ -24,12 +25,15 @@
   background: url('../../assets/desktop/icon-search.svg') no-repeat center left;
   background-size: 16px;
   margin-left: 2rem;
+  min-width: 120px;
 }
 
 .location {
-  background: url('../../assets/desktop/icon-location.svg') no-repeat center left;
+  background: url('../../assets/desktop/icon-location.svg') no-repeat center
+    left;
   background-size: 16px;
   margin-left: 2rem;
+  width: 100%;
   appearance: none;
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -47,10 +51,17 @@
   color: var(--light-text-color);
 }
 
+.mobileFilters {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+}
+
 .fullTimeOnly {
+  white-space: nowrap;
   display: inline-block;
   font-weight: 700;
-  padding-left: 25px;
+  padding-left: 35px;
   margin: 0 2rem;
   cursor: pointer;
   position: relative;
@@ -96,8 +107,81 @@
   transform: rotate(45deg);
 }
 
-.form button {
+.submitButton {
   border: none;
   cursor: pointer;
   margin-right: 1rem;
+}
+
+.filterButton {
+  display: none;
+  background: url('../../assets/mobile/icon-filter.svg') no-repeat;
+  background-position: center center;
+  background-size: cover;
+  width: 24px;
+  height: 24px;
+  margin: 1rem 1.5rem 1rem 1rem;
+  cursor: pointer;
+  border: none;
+}
+
+.buttonImage {
+  display: none;
+  background: url('../../assets/desktop/icon-search.svg') no-repeat;
+  background-position: center center;
+  background-size: cover;
+  width: 18px;
+  height: 18px;
+  filter: brightness(0) invert(1);
+}
+
+@media (max-width: 820px) {
+  .form {
+    grid-template-columns: 1fr auto auto;
+  }
+
+  .text {
+    border: none;
+    margin-left: 1rem;
+    padding-right: 0;
+  }
+
+  .submitButton {
+    padding: 1rem;
+  }
+
+  .buttonText {
+    display: none;
+  }
+
+  .buttonImage,
+  .filterButton {
+    display: block;
+  }
+
+  .location {
+    border-right: none;
+    padding: 0.5rem 0.5rem 0.5rem 2rem;
+    margin-left: 0;
+  }
+
+  .fullTimeOnly {
+    margin: 0;
+  }
+
+  .mobileFilters {
+    display: none;
+    align-items: center;
+    background: var(--filters-bg-color);
+    padding: 1rem;
+    position: absolute;
+    bottom: -68px;
+    width: 100%;
+    border-radius: 0.4rem;
+    z-index: 100;
+  }
+
+  .mobileFilters.active {
+    display: flex;
+  }
 }

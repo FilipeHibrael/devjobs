@@ -7,6 +7,7 @@ const FilterBar = ({ data, setJobsData }) => {
   const [fullTimeOnly, setFullTimeOnly] = React.useState('');
 
   const [locationList, setLocationList] = React.useState([]);
+  const [mobileFilters, setMobileFilters] = React.useState(false);
 
   React.useEffect(() => {
     const locations = data.map((item) => item.location);
@@ -64,19 +65,23 @@ const FilterBar = ({ data, setJobsData }) => {
           value={text}
           onChange={({ target }) => setText(target.value)}
         />
-        <select
-          className={styles.location}
-          value={location}
-          onChange={({ target }) => setLocation(target.value)}
+        <div
+          className={`${styles.mobileFilters} ${
+            mobileFilters ? styles.active : ''
+          }`}
         >
-          <option value="">Filter by location...</option>
-          {locationList.map((item) => (
-            <option key={item} value={item}>
-              {item}
-            </option>
-          ))}
-        </select>
-        <div>
+          <select
+            className={styles.location}
+            value={location}
+            onChange={({ target }) => setLocation(target.value)}
+          >
+            <option value="">Filter by location...</option>
+            {locationList.map((item) => (
+              <option key={item} value={item}>
+                {item}
+              </option>
+            ))}
+          </select>
           <label className={styles.fullTimeOnly}>
             <input
               type="checkbox"
@@ -87,8 +92,16 @@ const FilterBar = ({ data, setJobsData }) => {
             <span className={styles.checkmark}></span>
             Full Time Only
           </label>
-          <button className="button">Search</button>
         </div>
+        <button
+          className={styles.filterButton}
+          type="button"
+          onClick={() => setMobileFilters(!mobileFilters)}
+        ></button>
+        <button className={`${styles.submitButton} button`} type="submit">
+          <span className={styles.buttonText}>Search</span>
+          <span className={styles.buttonImage}></span>
+        </button>
       </form>
     </div>
   );
