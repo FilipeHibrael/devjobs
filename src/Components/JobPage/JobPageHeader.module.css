@@ -35,3 +35,32 @@
 .link {
   margin-right: 2.5rem;
 }
+
+@media (max-width: 700px) {
+  .jobPageHeader {
+    display: flex;
+    flex-direction: column;
+    padding: 3rem 1rem 1.5rem 1rem;
+    border-radius: 0.4rem;
+    overflow: initial;
+    position: relative;
+  }
+
+  .logo {
+    width: 3.5rem;
+    height: 3.5rem;
+    padding: 0.4rem;
+    border-radius: 0.8rem;
+    transform: translateY(-4.5rem);
+    position: absolute;
+  }
+
+  .info {
+    margin-left: 0;
+    margin-bottom: 1rem;
+  }
+
+  .link {
+    margin-right: 0;
+  }
+}

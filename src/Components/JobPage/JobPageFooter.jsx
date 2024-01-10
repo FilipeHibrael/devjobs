@@ -5,7 +5,7 @@ const JobPageFooter = ({ company, position, apply }) => {
   return (
     <div className={styles.bg}>
       <div className={`${styles.jobPageFooter} jobPageContainer`}>
-        <div>
+        <div className={styles.text}>
           <h2>{position}</h2>
           <span>{company}</span>
         </div>
